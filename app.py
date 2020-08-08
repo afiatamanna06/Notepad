@@ -12,7 +12,10 @@ def clearFile():
     print(" ")
     
 def openFile():
-    print(" ")
+    file = filedialog.askopenfile(mode='r',filetype=[{'text files','*.txt'}])
+    if file is not None:
+        content = file.read()
+        print(content)
 
 button1 = Button(root,text="Save",command=saveFile)
 button1.place(x=10,y=10)
@@ -22,5 +25,8 @@ button2.place(x=70,y=10)
 
 button3 = Button(root,text="Open",command=openFile)
 button3.place(x=138,y=10)
+
+entry = Text(root,height=48,width=68,wrap=WORD)
+entry.place(x=10,y=50)
 
 mainloop()
