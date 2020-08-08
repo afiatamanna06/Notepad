@@ -12,10 +12,11 @@ def clearFile():
     print(" ")
     
 def openFile():
-    file = filedialog.askopenfile(mode='r',filetype=[{'text files','*.txt'}])
+    file = filedialog.askopenfile(mode='r',filetypes=[('text files', '*.txt')])
     if file is not None:
         content = file.read()
         print(content)
+    entry.insert(INSERT,content)
 
 button1 = Button(root,text="Save",command=saveFile)
 button1.place(x=10,y=10)
