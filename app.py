@@ -6,7 +6,12 @@ root = Tk()
 root.geometry("500x600")
 
 def saveFile():
-    print(" ")
+    open_file = filedialog.asksaveasfile(mode='w',defaultextension='.txt')
+    if open_file is None:
+        return
+    text=str(entry.get(1.0,END))
+    open_file.write(text)
+    open_file.close()
     
 def clearFile():
     entry.delete(1.0,END)
