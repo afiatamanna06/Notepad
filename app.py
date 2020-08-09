@@ -9,7 +9,7 @@ def saveFile():
     print(" ")
     
 def clearFile():
-    print(" ")
+    entry.delete(1.0,END)
     
 def openFile():
     file = filedialog.askopenfile(mode='r',filetypes=[('text files', '*.txt')])
